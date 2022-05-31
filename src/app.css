@@ -1,0 +1,197 @@
+html {
+  --bg: rgb(255,255,255);
+  --bullet-inactive-color: rgba(0,0,0,0.1);
+  --text-color: #1e1e1e;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  line-height: 1.5em;
+  color: var(--text-color);
+  background-color: var(--bg);
+}
+
+body > ul {
+  position: relative;
+  margin: 2em auto;
+  padding-left: 2.1em;
+  padding-right: 2.1em;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+ul ul {
+  padding-left: 2.1em; /* this value is used in app.js */
+}
+
+li {
+  line-height: 1.5em;
+}
+
+.no-children {
+  position: relative;
+}
+
+summary {
+  position: relative;
+  list-style: none;
+}
+
+ul details {
+  position: relative;
+}
+
+ul details::before {
+  content: " ";
+  position: absolute;
+  top: 1.5em;
+  right: calc(100% + 1.1em); /* magic numbers ftw */
+  width: 1px;
+  height: calc(100% - 1.5em);
+  background-color: var(--bullet-inactive-color);
+}
+
+ul summary::before,
+.no-children::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.37em;
+  right: calc(100% + 0.6em);
+  width: 0;
+  height: 0;
+  border: 0.4em solid transparent;
+  border-left-color: var(--bullet-inactive-color);
+}
+
+ul summary::before {
+  border-left-color: var(--text-color);
+  transition: all 0.2s ease-in-out;
+}
+
+ul summary::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: calc(100% + 0.45em);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.25em;
+}
+
+ul summary:hover::after {
+  background-color: var(--bullet-inactive-color);
+}
+
+ul details[open] > summary::before {
+  transform: rotate(90deg);
+  transform-origin: 0.2em 50%;
+}
+
+p {
+  margin: 0;
+}
+
+/* Head Menu */
+
+.menu-wrapper {
+  position: absolute;
+}
+
+.menu-wrapper summary {
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 1.25em;
+  height: 1.25em;
+  list-style: none;
+  background: none;
+  z-index: 2;
+}
+
+.menu-wrapper summary svg {
+  max-width: 100%;
+  min-width: 100%;
+  fill: var(--text-color);
+  opacity: 0.5;
+}
+
+.menu-wrapper summary:hover svg {
+  opacity: 1;
+}
+
+.menu {
+  position: fixed;
+  top: 0.5em;
+  right: 2.25em;
+  width: 12em;
+  padding: 0.5em;
+  border: 1px solid var(--text-color);
+  border-radius: 0.5em;
+  background-color: var(--bg);
+  z-index: 2;
+}
+
+.menu label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 0.85em;
+}
+
+.menu p {
+  font-size: 0.85em;
+}
+
+.menu .page-size,
+.menu .font-size {
+  width: 10em;
+}
+
+.color-theme label {
+  margin-bottom: 0;
+}
+
+/* Helpers */
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+/* Dark mode and color theme */
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --bg: #1e1e1e;
+    --bullet-inactive-color: rgba(255,255,255,0.1);
+    --text-color: rgba(255,255,255,0.9);
+  }
+}
+
+html[data-theme="light"] {
+  --bg: rgb(255,255,255);
+  --bullet-inactive-color: rgba(0,0,0,0.1);
+  --text-color: #1e1e1e;
+}
+
+html[data-theme="dark"] {
+  --bg: #1e1e1e;
+  --bullet-inactive-color: rgba(255,255,255,0.1);
+  --text-color: rgba(255,255,255,0.9);
+}
