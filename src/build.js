@@ -14,6 +14,7 @@ fs.readFile(bikeFile, (err, data) => {
   const lines = data.toString().split('\n');
   for (let i = 0; i < lines.length; i++) {
     if (lines[i] === '  <head>') {
+      // todo: use a CDN URL or a local URL based on a flag or something
       lines.splice(i + 1, 0, '    <script defer src="http://localhost:8888/src/app.js"></script>');
       lines.splice(i + 1, 0, '    <link rel="stylesheet" href="http://localhost:8888/src/app.css">');
       break;
