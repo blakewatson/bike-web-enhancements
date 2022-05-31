@@ -26,6 +26,8 @@ You can use these CDN-powered tags:
 <script defer src="https://cdn.jsdelivr.net/gh/blakewatson/bike-web-enhancements/src/app.js"></script>
 ```
 
+By injecting those tags in the `<head>` and changing the file extension to `html` (you should probably change the doctype to HTML as well), you can view the file in a web browser with the enhancements included.
+
 ## Building
 
 If you want to make your own modifications and test locally, you can use this little build system I hacked together.
