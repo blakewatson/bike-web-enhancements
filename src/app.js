@@ -143,6 +143,12 @@ function insertHeaderMenu() {
         <label><input type="radio" name="theme" value="light"> Light</label>
         <label><input type="radio" name="theme" value="dark"> Dark</label>
       </div>
+
+      <div class="credits">
+        <p>A <a href="https://blakewatson.com/">Blake Watson</a> project<br>
+          Made for <a href="https://www.hogbaysoftware.com/bike/">Bike</a></p>
+        <p class="report-issue"><a href="https://github.com/blakewatson/bike-web-enhancements">Report issue</a></p>
+      </div>
     </div>
   `
   document.body.prepend(menu);
