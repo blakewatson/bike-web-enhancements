@@ -1,6 +1,7 @@
 html {
   --bg: rgb(255,255,255);
   --bullet-inactive-color: rgba(0,0,0,0.1);
+  --medium-gray: #999;
   --text-color: #1e1e1e;
 }
 
@@ -45,10 +46,15 @@ summary {
   list-style: none;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
 ul details {
   position: relative;
 }
 
+/* indent guide */
 ul details::before {
   content: " ";
   position: absolute;
@@ -74,7 +80,6 @@ ul summary::before,
 
 ul summary::before {
   border-left-color: var(--text-color);
-  transition: all 0.2s ease-in-out;
 }
 
 ul summary::after {
@@ -161,6 +166,13 @@ p {
 
 .color-theme label {
   margin-bottom: 0;
+}
+
+.menu input[type="number"] {
+  border: 1px solid var(--medium-gray);
+  font-size: 1em;
+  color: var(--text-color);
+  background-color: var(--bg);
 }
 
 /* Helpers */
