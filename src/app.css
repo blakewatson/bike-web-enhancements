@@ -32,6 +32,10 @@ li {
   line-height: 1.5em;
 }
 
+.empty::before {
+  content: "\00A0";
+}
+
 .no-children {
   position: relative;
 }

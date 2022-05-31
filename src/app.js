@@ -26,6 +26,11 @@ function getModifiedTree(root = null) {
     const ul = item.querySelector(':scope > ul');
     const attrs = getAttributesString(item.attributes);
 
+    // if empty, return the list item
+    if (item.innerHTML.trim() === '<p></p>') {
+      return `<li class="empty" ${attrs}></li>`
+    }
+
     // no children, return the list item
     if (!ul) {
       return `<li class="no-children" ${attrs}>${item.innerHTML}</li>`;
