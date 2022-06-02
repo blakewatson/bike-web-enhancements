@@ -3,6 +3,8 @@ const INDENT_EM = 2.1;
 main();
 
 function main() {
+  document.querySelector('html').classList.add('js');
+
   addDetailsElements();
   handleExtraIndents();
   insertHeaderMenu();
