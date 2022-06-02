@@ -19,14 +19,14 @@ The following features are on my todo list:
 
 The only way to use these assets currently is to manually inject a `link` tag and a `script` tag into the HTML of the `.bike` file.
 
-You can use these CDN-powered tags:
+You can use the following CDN-powered tags. For better interoperability with Bike's XML format, it's recommended that you format your tags like this:
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blakewatson/bike-web-enhancements/src/app.css">
-<script defer src="https://cdn.jsdelivr.net/gh/blakewatson/bike-web-enhancements/src/app.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blakewatson/bike-web-enhancements/src/app.css"/>
+<script defer="true" src="https://cdn.jsdelivr.net/gh/blakewatson/bike-web-enhancements/src/app.js">\\</script>
 ```
 
-By injecting those tags in the `<head>` and changing the file extension to `html` (you should probably change the doctype to HTML as well), you can view the file in a web browser with the enhancements included.
+By injecting those tags in the `<head>` and changing the file extension to `html`, you can view the file in a web browser with the enhancements included.
 
 ## Building
 
