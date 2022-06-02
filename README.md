@@ -28,6 +28,10 @@ You can use the following CDN-powered tags. For better interoperability with Bik
 
 By injecting those tags in the `<head>` and changing the file extension to `html`, you can view the file in a web browser with the enhancements included.
 
+### CSS-only
+
+If you don’t want the features that JavaScript enables (e.g., collapsing text), you can use the CSS by itself to get some basic styling that is similar to Bike's defaults.
+
 ## Building
 
 If you want to make your own modifications and test locally, you can use this little build system I hacked together.
